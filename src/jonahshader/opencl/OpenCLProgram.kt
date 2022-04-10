@@ -16,7 +16,7 @@ import java.util.*
  */
 class OpenCLProgram(filename: String, kernelNames: Array<String>) {
     private val platformIndex = 0
-    private val deviceType = CL.CL_DEVICE_TYPE_ALL
+    private val deviceType = CL.CL_DEVICE_TYPE_GPU
     private val deviceIndex = 0
 
     lateinit var commandQueue: cl_command_queue

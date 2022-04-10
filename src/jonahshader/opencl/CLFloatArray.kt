@@ -8,7 +8,7 @@ class CLFloatArray(val array: FloatArray, context: cl_context, private val comma
     private val deviceMemPointer: Pointer
 
     init {
-        memory = CL.clCreateBuffer(context, CL.CL_MEM_READ_WRITE,
+        memory = CL.clCreateBuffer(context, CL.CL_MEM_READ_WRITE or CL.CL_MEM_COPY_HOST_PTR,
                 Sizeof.cl_float * array.size.toLong(), hostMemPointer, null)
         deviceMemPointer = Pointer.to(memory)
     }
